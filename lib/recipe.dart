@@ -9,4 +9,13 @@ class Recipe {
   final String picturePath;
 
   const Recipe({required this.title, required this.picturePath, required this.cookingTime});
+
+  String getCookingTime() {
+    if (cookingTime < 60) {
+      return "$cookingTime минут";
+    }
+    else {
+      return "${cookingTime ~/ 60} час ${cookingTime % 60} минут";
+    }
+  }
 }

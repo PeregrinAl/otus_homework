@@ -6,14 +6,10 @@ import '../recipe.dart';
 class RecipeWidget extends StatelessWidget {
   const RecipeWidget({
     Key? key,
-    required this.context,
     required this.recipe,
-    required this.index,
   }) : super(key: key);
 
-  final BuildContext context;
   final Recipe recipe;
-  final int index;
 
   @override
   Widget build(BuildContext context) {
@@ -22,24 +18,22 @@ class RecipeWidget extends StatelessWidget {
         color: Colors.white,
         boxShadow: [shadow],
       ),
-      margin: const EdgeInsets.all(10),
       width: 220,
       child: Row(
         children: <Widget>[
           Image.asset(recipe.picturePath,
-              width: MediaQuery.of(context).size.width / 5,
-              height: MediaQuery.of(context).size.height / 5,
-              fit: BoxFit.fitWidth
+              width: 149,
+              height: 136,
           ),
 
           Flexible(
             child: SizedBox(
-              height: MediaQuery.of(context).size.height / 5,
+              height: 136,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   recipeTitle(recipe.title),
-                  cookingTimeText("${recipe.cookingTime} минут"),
+                  cookingTimeText(recipe.getCookingTime()),
                 ],
               ),
             ),
