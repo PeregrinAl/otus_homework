@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'homeScreen.dart';
 import 'data/constants.dart';
 
+// TODO: Реализовать переключение кнопки "Избранное"
+// TODO: Реализовать отметку шагов приготовления (checkbox)
+// TODO: Возможность добавить комментарий к рецепту (текстовое поле + кнопка + изменение состояния)
+
 void main() {
   runApp(const MyApp());
 }
