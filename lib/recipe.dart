@@ -3,18 +3,24 @@ class Recipe {
   final String title;
   final int cookingTime;
   final String picturePath;
-  final Map<String, String> ingredients;
+  final List<List<String>> ingredients;
   final List<String> steps;
 
   const Recipe({required this.title, required this.picturePath,
     required this.cookingTime, required this.ingredients, required this.steps});
 
-  String getCookingTime() {
-    if (cookingTime < 60) {
-      return "$cookingTime минут";
+  List<String>getCookingTime() {
+    int hours = cookingTime~/60;
+    int minutes = cookingTime % 60;
+
+    List<String> result = [];
+
+    if (hours > 0) {
+      result.add("$hours");
     }
-    else {
-      return "${cookingTime ~/ 60} час ${cookingTime % 60} минут";
-    }
-  }
+
+    result.add("$minutes");
+
+    return result;
+}
 }

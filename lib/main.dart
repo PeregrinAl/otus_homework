@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:otus_homework/data/data.dart';
+import 'package:otus_homework/widgets/full_recipe_widget.dart';
 import 'homeScreen.dart';
 import 'data/constants.dart';
-
-// TODO: Реализовать переключение кнопки "Избранное"
-// TODO: Реализовать отметку шагов приготовления (checkbox)
-// TODO: Возможность добавить комментарий к рецепту (текстовое поле + кнопка + изменение состояния)
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +18,9 @@ class MyApp extends StatelessWidget {
         primaryColor: mainColor,
       ),
       debugShowCheckedModeBanner: false,
-      home: const HomeScreen(),
+      // home: const HomeScreen(),
+      home: FullRecipeWidget(recipe: getRecipes()[0],
+      ),
     );
   }
 }
