@@ -32,8 +32,8 @@ class RecipeWidget extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  recipeTitle(recipe.title),
-                  cookingTimeText(recipe.getCookingTime()),
+                  RecipeTitle(recipe.title),
+                  CookingTimeText(recipe.cookingTime > 60 ? "${recipe.getCookingTime()[0]} часов ${recipe.getCookingTime()[1]} минут" : "${recipe.getCookingTime()[0]} минут"),
                 ],
               ),
             ),

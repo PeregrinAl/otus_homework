@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:otus_homework/data/data.dart';
+import 'package:otus_homework/widgets/full_recipe_widget.dart';
 import 'homeScreen.dart';
 import 'data/constants.dart';
 
@@ -16,7 +18,9 @@ class MyApp extends StatelessWidget {
         primaryColor: mainColor,
       ),
       debugShowCheckedModeBanner: false,
-      home: const HomeScreen(),
+      // home: const HomeScreen(),
+      home: FullRecipeWidget(recipe: getRecipes()[0],
+      ),
     );
   }
 }
